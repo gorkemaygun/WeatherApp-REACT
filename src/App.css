@@ -1,38 +1,35 @@
-.App {
+#zipInput {
+  margin-left: 40%;
+}
+body {
+  background-image: url("https://static-11.sinclairstoryline.com/resources/media/0fa57314-83f5-419b-a0b5-fb3397263ade-large16x9_Charlotte.jpg?1586525520747");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+p {
   text-align: center;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: darkred;
+  font-size: 40px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bckg {
+  margin-top: 10%;
+  opacity: 0.75;
+  background-color: blanchedalmond;
+  width: 70%;
+  margin-left: 15%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bckg1 {
+  opacity: 0.75;
+  background-color: blanchedalmond;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 5%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h3 {
+  text-align: center;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: darkred;
 }
