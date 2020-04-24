@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Moment from "moment";
 import "moment-timezone";
 import "./App.css";
@@ -20,6 +20,9 @@ class App extends React.Component {
 
   getWeather = () => {
     const zipCode = document.getElementById("zipInput").value;
+    const API_KEY = process.env.REACT_APP_OW_API_KEY;
+    const iconUrl =
+      "http://openweathermap.org/img/wn/" + this.state.icon + "@2x.png";
 
     fetch(
       "http://api.openweathermap.org/data/2.5/weather?zip=" +
@@ -44,6 +47,7 @@ class App extends React.Component {
             temp: Math.floor(data.main.temp) + " °F",
             timezone: data.timezone,
             description: data.weather[0].main,
+            icon: data.weather[0].icon,
           });
           this.getTime();
         });
@@ -56,29 +60,31 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <body>
-          <div className="bckg1">
-            <h3>Welcome to Weather App</h3>
-            <input
-              id="zipInput"
-              type="text"
-              placeholder="Please Enter ZipCode"
-            ></input>
-            <button
-              className=" btn btn-primary m-5"
-              onClick={this.getWeather}
-              id="search"
-            >
-              Search
-            </button>
-          </div>
-          <div className="bckg">
-            <p id="name">{this.state.name}</p>
-            <p id="temp">{this.state.temp}</p>
-            <p id="description">{this.state.description}</p>
-            <p id="timezone">{this.state.time}</p>
-          </div>
-        </body>
+        <div className="bckg1">
+          <h3>Welcome to Weather App</h3>
+          <input
+            id="zipInput"
+            type="text"
+            placeholder="Please Enter ZipCode"
+          ></input>
+          <button
+            className=" btn btn-primary m-5"
+            onClick={this.getWeather}
+            id="search"
+            active
+          >
+            Search
+          </button>
+        </div>
+        <div className="bckg">
+          <p id="name">{this.state.name}</p>
+          <p id="temp">{this.state.temp}</p>
+          <p id="description">
+            {this.state.description}
+            {this.iconUrl}
+          </p>
+          <p id="timezone">{this.state.time}</p>
+        </div>
       </>
     );
   }

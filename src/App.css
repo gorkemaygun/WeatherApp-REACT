@@ -5,6 +5,9 @@ body {
   background-image: url("https://static-11.sinclairstoryline.com/resources/media/0fa57314-83f5-419b-a0b5-fb3397263ade-large16x9_Charlotte.jpg?1586525520747");
   background-repeat: no-repeat;
   background-size: cover;
+  top: 0;
+  left: 0;
+  background-attachment: fixed;
 }
 p {
   text-align: center;
