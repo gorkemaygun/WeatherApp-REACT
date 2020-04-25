@@ -21,8 +21,6 @@ class App extends React.Component {
   getWeather = () => {
     const zipCode = document.getElementById("zipInput").value;
     const API_KEY = process.env.REACT_APP_OW_API_KEY;
-    const iconUrl =
-      "http://openweathermap.org/img/wn/" + this.state.icon + "@2x.png";
 
     fetch(
       "http://api.openweathermap.org/data/2.5/weather?zip=" +
@@ -48,7 +46,10 @@ class App extends React.Component {
             timezone: data.timezone,
             description: data.weather[0].main,
             icon: data.weather[0].icon,
+            image:
+              "http://openweathermap.org/img/wn/" + this.state.icon + "@2x.png",
           });
+
           this.getTime();
         });
       })
@@ -68,7 +69,7 @@ class App extends React.Component {
             placeholder="Please Enter ZipCode"
           ></input>
           <button
-            className=" btn btn-primary m-5"
+            className=" btn btn-success m-5"
             onClick={this.getWeather}
             id="search"
             active
@@ -79,10 +80,16 @@ class App extends React.Component {
         <div className="bckg">
           <p id="name">{this.state.name}</p>
           <p id="temp">{this.state.temp}</p>
-          <p id="description">
-            {this.state.description}
-            {this.iconUrl}
-          </p>
+          <p id="description">{this.state.description}</p>
+          <span>
+            <img
+              src={
+                "http://openweathermap.org/img/wn/" +
+                this.state.icon +
+                "@2x.png"
+              }
+            ></img>
+          </span>
           <p id="timezone">{this.state.time}</p>
         </div>
       </>

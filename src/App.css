@@ -13,19 +13,19 @@ p {
   text-align: center;
   font-weight: bold;
   font-family: Georgia, "Times New Roman", Times, serif;
-  color: darkred;
+  color: black;
   font-size: 40px;
 }
 .bckg {
   margin-top: 10%;
   opacity: 0.75;
-  background-color: blanchedalmond;
+  background-color: rgb(51, 89, 216);
   width: 70%;
   margin-left: 15%;
 }
 .bckg1 {
   opacity: 0.75;
-  background-color: blanchedalmond;
+  background-color: rgb(51, 89, 216);
   width: 70%;
   margin-left: 15%;
   margin-top: 5%;
@@ -34,5 +34,9 @@ h3 {
   text-align: center;
   font-weight: bold;
   font-family: Georgia, "Times New Roman", Times, serif;
-  color: darkred;
+  color: black;
+  font-size: 20px;
+}
+img {
+  margin-left: 45%;
 }
